@@ -1,8 +1,19 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 
+
+//store in password length
 const getPasswordLength = () => {
-  return 10;
+ //prompt user a question for a length 
+
+let sign = prompt ("Please enter password length?")
+ if (sign === "10") {
+   console.log("10")
+ }
+
+//   create a boolean for string  to number conversion
+//  store number if true passwordLength
+//   return 10;
 };
 
 const getPasswordCriteria = () => {
@@ -17,7 +28,7 @@ const getPasswordCriteria = () => {
 const createRandomPassword = () => {
   return "kdUE28(@d0";
 };
-
+  
 // main function to generate the random password
 const generatePassword = () => {
   // get the password length
