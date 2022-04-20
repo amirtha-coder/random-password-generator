@@ -118,35 +118,37 @@ const getPasswordCriteria = () => {
   if (wantsLowercaseLetters) {
     passwordValues = [...alphaLower];
   }
-  //push ???
+
   const wantsUppercaseLetters = confirm("do you want uppercase letters?");
   if (wantsUppercaseLetters) {
     passwordValues = [...passwordValues, ...alphaUpper];
   }
 
-  //push ???
   const wantsNumbers = confirm("do you want numbers?");
   if (wantsNumbers) {
     passwordValues = [...passwordValues, ...numbers];
   }
-  ``;
-  //push ???
+
   const wantSpecial = confirm("do you want special characters?");
   if (wantSpecial) {
     passwordValues = [...passwordValues, ...special];
+
+    // if (
+    //   !wantsNumbers &&
+    //   !wantsUppercaseLetters &&
+    //   !wantsUppercaseLetters &&
+    //   !wantSpecial
+    // )
+    //   passwordValues = [...Error("at least 1 of these options must be chosen")];
   }
   return passwordValues;
-
-  // notes from class
-  // return [
-  //   "abcdefghijklmnopqrstuvwxyz",
-  //   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  //   "0123456789",
-  //   " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-  // ];
 };
+
 const createRandomPassword = () => {
   // how to math random function????
+  // for loop is required
+  // solve a way to find solution to problem
+
   return "kdUE28(@d0";
 };
 
@@ -159,6 +161,9 @@ const generatePassword = () => {
   }
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
+  if (!passwordCriteria) {
+    // return null;
+  }
   console.log(passwordCriteria);
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
