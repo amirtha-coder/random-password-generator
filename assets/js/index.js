@@ -3,12 +3,16 @@ const generateBtn = document.querySelector("#generate");
 
 
 //list of arrays
-const alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const alphaLower= "abcdefghijklmnopqrstuvwxyz";
-const numbers = "0123456789"
-const special= "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+const alphaUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-const valid = false 
+const alphaLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+const numbers = ["0","1","2","3","4","5","6","7","8","9"]
+const special= ["!", "\"","#","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
+
+// Changeable boolean 
+let valid = false 
+
+//Password length question  - not working 
 const getPasswordLength = () => {
 //have a prompt for password length 
 const lengthNum = parseInt( prompt(
@@ -25,33 +29,29 @@ else (lengthNum <= 8 && lengthNum >= 256); {valid = true}
 
 
 const getPasswordCriteria = () => {
-prompt ("do you want lowercase letters?")
-if (confirm) { 
-  //push
-}
-prompt( "do you want uppercase letters?")
-if (confirm){
+
+const alphaLower = confirm ("do you want lowercase letters?")
+//push ???
+const alphaUpper = confirm ("do you want uppercase letters?")
+
+//push ???
+const numbers = confirm ("do you want numbers?")
+
+//push ???
+const special = confirm ("do you want special characters?")
 //push
 }
-prompt ("do you want numbers?")
-if (confirm){
-//push
-}
-prompt ("do you want special characters?")
-if (confirm){
-  //push
-}
 
-  return [
-    "abcdefghijklmnopqrstuvwxyz",
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "0123456789",
-    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-  ];
-};
-
+// notes from class
+  // return [
+  //   "abcdefghijklmnopqrstuvwxyz",
+  //   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  //   "0123456789",
+  //   " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
+  // ];
+``
 const createRandomPassword = () => {
-   ``
+// how to math random function????
   return "kdUE28(@d0";
 };
 
