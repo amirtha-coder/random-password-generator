@@ -2,7 +2,7 @@
 const generateBtn = document.querySelector("#generate");
 
 //list of arrays
-
+// const allCHar = alphaUpper + alphaLower + numbers + special;
 const alphaUpper = [
   "A",
   "B",
@@ -94,10 +94,7 @@ const special = [
   "~",
 ];
 
-// Changeable boolean
-let valid = false;
-
-//Password length question  - not working
+//Password length  prompt
 const getPasswordLength = () => {
   //have a prompt for password length
   const lengthNum = prompt(
@@ -112,6 +109,7 @@ const getPasswordLength = () => {
   return parseInt(lengthNum);
 };
 
+// password criteria for characters
 const getPasswordCriteria = () => {
   let passwordValues = [];
   const wantsLowercaseLetters = confirm("do you want lowercase letters?");
@@ -132,24 +130,28 @@ const getPasswordCriteria = () => {
   const wantSpecial = confirm("do you want special characters?");
   if (wantSpecial) {
     passwordValues = [...passwordValues, ...special];
-
-    // if (
-    //   !wantsNumbers &&
-    //   !wantsUppercaseLetters &&
-    //   !wantsUppercaseLetters &&
-    //   !wantSpecial
-    // )
-    //   passwordValues = [...Error("at least 1 of these options must be chosen")];
   }
+  if (
+    !wantsNumbers &&
+    !wantsUppercaseLetters &&
+    !wantsUppercaseLetters &&
+    !wantSpecial
+  ) {
+    alert("at least 1 of these options must be chosen");
+    return;
+  }
+
   return passwordValues;
 };
 
-const createRandomPassword = () => {
-  // how to math random function????
-  // for loop is required
-  // solve a way to find solution to problem
-
-  return "kdUE28(@d0";
+// random password
+const createRandomPassword = (length, passwordValues) => {
+  let password = [];
+  for (i = 0; i < length; i += 1) {
+    let randomIndex = Math.floor(Math.random() * passwordValues.length);
+    password.push(passwordValues[randomIndex]);
+  }
+  return password.join("");
 };
 
 // main function to generate the random password
@@ -162,7 +164,7 @@ const generatePassword = () => {
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
   if (!passwordCriteria) {
-    // return null;
+    return "Please start again!";
   }
   console.log(passwordCriteria);
   // create random password
