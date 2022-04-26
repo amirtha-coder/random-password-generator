@@ -98,11 +98,11 @@ const special = [
 const getPasswordLength = () => {
   //have a prompt for password length
   const lengthNum = prompt(
-    "What is the length of your password?- try to have it between 8-26 characters"
+    "What is the length of your password?- try to have it between 8-128 characters"
   );
   // rules + boolean
 
-  if (isNaN(lengthNum) || lengthNum < 8 || lengthNum > 26) {
+  if (isNaN(lengthNum) || lengthNum < 8 || lengthNum > 128) {
     alert("this message contains too few numbers or has characters");
     return null;
   }
@@ -166,7 +166,7 @@ const generatePassword = () => {
   if (!passwordCriteria) {
     return "Please start again!";
   }
-  console.log(passwordCriteria);
+
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
 
