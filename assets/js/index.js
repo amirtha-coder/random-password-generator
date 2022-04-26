@@ -103,7 +103,7 @@ const getPasswordLength = () => {
   // rules + boolean
 
   if (isNaN(lengthNum) || lengthNum < 8 || lengthNum > 128) {
-    alert("this message contains too few numbers or has characters");
+    alert("this message contains too few numbers or has letters");
     return null;
   }
   return parseInt(lengthNum);
