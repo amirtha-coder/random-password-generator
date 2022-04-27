@@ -159,7 +159,7 @@ const generatePassword = () => {
   // get the password length
   const passwordLength = getPasswordLength();
   if (!passwordLength) {
-    return;
+    return "Please start again!";
   }
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
