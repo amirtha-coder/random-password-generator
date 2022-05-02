@@ -134,7 +134,7 @@ const getPasswordCriteria = () => {
   if (
     !wantsNumbers &&
     !wantsUppercaseLetters &&
-    !wantsUppercaseLetters &&
+    !wantsLowercaseLetters &&
     !wantSpecial
   ) {
     alert("at least 1 of these options must be chosen");
